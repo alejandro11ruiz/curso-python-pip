@@ -1,8 +1,18 @@
 import utils
 import read_csv
 import charts
+import pandas as pd
 
 def run():
+  
+  df = pd.read_csv('data.csv')
+  df = df[df['Continent'] == 'South America']
+  
+  countries = df['Country/Territory'].values
+  percentages = df['World Population Percentage'].values
+  
+  
+  
   data = read_csv.read_csv('./data.csv')
   country_name = input('Type Country => ')
 
